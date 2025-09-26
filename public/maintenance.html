@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simplex System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:linear-gradient(135deg,#00c6ff,#5b2be0);
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+   .card {
+  width: min(560px, 92vw);
+  padding: 12px 24px 32px;
+  border-radius: 12px;
+  background: rgba(13, 27, 42, .92); /* Koyu Arka Plan Rengi */
+  border: 1px solid rgba(255,255,255,.05); /* İnce Kenarlık */
+  box-shadow: 0 18px 48px rgba(0,0,0,.35); /* Gölge Efekti */
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+.logo img {
+  width: 90%;            /* Kartın %90'ı kadar yer kaplasın (Büyüttük!) */
+  max-width: 350px;      /* Maksimum genişlik limitini de yükselttik (Büyüttük!) */
+  height: auto;
+  display: block;
+  margin: 0 auto 12px;   /* Bu kısmı değiştirmeyin */
+}
+    h1 {
+      font-size:28px;
+      font-weight:700;
+      margin:0 0 8px;
+      text-transform:none;           /* avtomatik uppercase OFF */
+      font-feature-settings:"case" off;
+    }
+    h2 {
+      font-size:22px;
+      font-weight:500;
+      margin:0 0 18px;
+      opacity:.9;
+    }
+    p {
+      font-size:15px;
+      opacity:.75;
+      margin:0 0 22px;
+    }
+    .btn {
+      background:#00d4aa;
+      color:#001d17;
+      border:0;
+      padding:12px 22px;
+      border-radius:10px;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow:0 10px 22px rgba(0,212,170,.45);
+    }
+    .btn:hover { transform:translateY(-1px) }
+    .email {
+      margin-top:18px;
+      color:#00ffcc;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .email:hover { text-decoration:underline }
+
+    /* toast */
+    #toast {
+      position:fixed;
+      left:50%;top:50%;
+      transform:translate(-50%,-50%) scale(.98);
+      background:#0b1620;color:#eafaf7;
+      border:1px solid #153247;
+      padding:14px 18px;border-radius:12px;
+      min-width:260px;max-width:90vw;
+      text-align:center;
+      box-shadow:0 14px 36px rgba(0,0,0,.45);
+      visibility:hidden;opacity:0;
+      transition:opacity .25s, transform .25s;
+      z-index:1000;
+    }
+    #toast.show {
+      visibility:visible;opacity:1;
+      transform:translate(-50%,-50%) scale(1);
+    }
+    #backdrop {
+      position:fixed;inset:0;
+      background:rgba(0,0,0,.25);
+      backdrop-filter:blur(2px);
+      visibility:hidden;opacity:0;
+      transition:opacity .2s;
+      z-index:999;
+    }
+    #backdrop.show {visibility:visible;opacity:1}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="logo">
+      <img src="/images/simplex-logo.svg" alt="Simplex System Logo">
+    </div>
+
+    <h1>Xəstəxana İdarəetməsi</h1>
+    <h2>üçün yeni dövr başlayır</h2>
+    <p>Gələcək buradadır — sadəcə gözləyin.</p>
+
+    <button class="btn" onclick="showToast()">İlk xəbərdar ol</button>
+    <div class="email" id="email">office@simplexsystem.az</div>
+  </main>
+
+  <div id="backdrop"></div>
+  <div id="toast">🚀 Yeni dövr başlayanda ilk siz eşidəcəksiniz.</div>
+
+  <script>
+    // email copy
+    const email = document.getElementById('email');
+    email.onclick = async () => {
+      await navigator.clipboard.writeText(email.textContent.trim());
+      const original = email.textContent;
+      email.textContent = 'Kopyalandı ✅';
+      setTimeout(()=> email.textContent = original, 1500);
+    };
+
+    function showToast(){
+      const toast = document.getElementById('toast');
+      const backdrop = document.getElementById('backdrop');
+      toast.classList.add('show'); backdrop.classList.add('show');
+      setTimeout(()=>{ toast.classList.remove('show'); backdrop.classList.remove('show'); }, 3000);
+    }
+  </script>
+</body>
+</html>

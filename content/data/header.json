@@ -1,94 +1,44 @@
 {
-    "logo": {
-        "url": "/images/logo-dark.svg",
-        "altText": "Logo dark",
-        "styles": {
-            "self": {
-                "margin": ["mr-3"]
-            }
-        },
-        "type": "ImageBlock"
+  "logo": {
+    "url": "/images/qara_logo.svg",
+    "altText": "Simplex System",
+    "styles": {
+      "self": {
+        "margin": ["mr-3"],
+        "height": ["h-8"],
+        "width": ["w-auto"]
+      }
     },
-    "primaryLinks": [
-        {
-            "label": "Pricing",
-            "url": "/pricing",
-            "icon": "arrowRight",
-            "iconPosition": "right",
-            "style": "secondary",
-            "type": "Link"
-        },
-        {
-            "label": "Blog",
-            "altText": "Blog",
-            "url": "/blog",
-            "icon": "arrowRight",
-            "iconPosition": "right",
-            "style": "secondary",
-            "type": "Link"
-        },
-        {
-            "label": "Careers",
-            "altText": "Careers page",
-            "url": "/careers",
-            "icon": "arrowRight",
-            "iconPosition": "right",
-            "style": "secondary",
-            "type": "Link"
-        },
-        {
-            "label": "Dropdown",
-            "altText": "Dropdown",
-            "links": [
-                {
-                    "label": "Dropdown item",
-                    "url": "/",
-                    "icon": "arrowRight",
-                    "iconPosition": "right",
-                    "style": "secondary",
-                    "type": "Link"
-                },
-                {
-                    "label": "Dropdown item",
-                    "url": "/",
-                    "icon": "arrowRight",
-                    "iconPosition": "right",
-                    "style": "secondary",
-                    "type": "Link"
-                },
-                {
-                    "label": "Dropdown item",
-                    "url": "/",
-                    "icon": "arrowRight",
-                    "iconPosition": "right",
-                    "style": "secondary",
-                    "type": "Link"
-                }
-            ],
-            "labelStyle": "secondary",
-            "type": "SubNav"
-        }
-    ],
-    "secondaryLinks": [
-        {
-            "label": "Sign up",
-            "altText": "Sign up",
-            "url": "https://app.netlify.com/signup",
-            "icon": "arrowRight",
-            "iconPosition": "right",
-            "style": "secondary",
-            "type": "Button"
-        },
-        {
-            "label": "Log in",
-            "url": "/",
-            "icon": "arrowRight",
-            "iconPosition": "right",
-            "style": "primary",
-            "type": "Button"
-        }
-    ],
-    "variant": "logo-left-primary-nav-centered",
-    "colors": "bg-light-fg-dark",
-    "type": "Header"
+    "type": "ImageBlock"
+  },
+  "primaryLinks": [
+    {
+      "label": "Ana səhifə",
+      "url": "/",
+      "style": "secondary",
+      "type": "Link"
+    },
+    {
+      "label": "Haqqımızda",
+      "url": "/about",
+      "style": "secondary",
+      "type": "Link"
+    },
+    {
+      "label": "Xidmətlər",
+      "url": "/services",
+      "style": "secondary",
+      "type": "Link"
+    },
+    {
+      "label": "Əlaqə",
+      "url": "/contact",
+      "style": "secondary",
+      "type": "Link"
+    }
+  ],
+  "secondaryLinks": [],
+  "variant": "logo-left-primary-nav-centered",
+  "colors": "bg-light-fg-dark",
+  "type": "Header"
 }
