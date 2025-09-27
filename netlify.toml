@@ -2,31 +2,21 @@
   command = "npm run build"
   publish = ".next"
 
-# (İstəyə görə — assets üçün pass-through; qalsa da olar)
-[[redirects]]
-  from = "/images/*"
-  to   = "/images/:splat"
-  status = 200
-
+# --- Assets always pass-through ---
 [[redirects]]
   from = "/_next/*"
   to   = "/_next/:splat"
   status = 200
 
 [[redirects]]
-  from = "/favicon*"
-  to   = "/favicon.svg"
+  from = "/images/*"
+  to   = "/images/:splat"
   status = 200
 
-# YALNIZ lazım olanda baxım səhifəsini əl ilə açacaqsan.
-# [[redirects]]
-#   from = "/*"
-#   to   = "/maintenance.html"
-#   status = 200
-#   force = true
-
-# Maintenance səhifəsinə düz keçid üçün qalsın:
-[[redirects]]
-  from = "/maintenance"
-  to   = "/maintenance.html"
-  status = 200
+# --- ONLY PRODUCTION: show maintenance page ---
+[context.production]
+  [[context.production.redirects]]
+    from = "/*"
+    to   = "/maintenance.html"
+    status = 200
+    force = true
